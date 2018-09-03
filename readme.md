@@ -1,7 +1,7 @@
 ## 获取
 
 ``
-git clone https://github.com/lscho/sshp
+git clone https://github.com/lscho/sshp.git
 ``
 
 ## 使用
