@@ -8,25 +8,22 @@ add(){
     read -r -p "server user(root):" server_user
     read -r -p "server password:" server_password
 
-    if [ ! $server_port ]
+    if [[ -z "$server_name" || -z "$server_host" ]]
     then
-    	server_port=22
+    	echo "server_name or server_host does not exist"
+    	exit;
     fi
 
-    if [ !$server_user ]
-    then
-    	server_user="root"
-    fi
+    server_port=${server_port:-22}
+    server_user=${server_user:-"root"}
 
 	if [ ! -d $path ]
 	then
-		echo "mkdir $path"
 		( mkdir $path )
 	fi
 
 	if [ ! -f $path$server_name ]
 	then
-		echo "touch $path$server_name"
 		( touch $path$server_name )
 	else
 
