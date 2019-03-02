@@ -81,7 +81,7 @@ login(){
 	spawn ssh -p '$server_port' '$server_user'@'$server_host'
 	expect {
 		"*yes/no" { send "yes\r"; exp_continue}
-		"*password:" { send "'$server_password'\r" }
+		"*assword:" { send "'$server_password'\r" }
 	}
 	interact
 	'
